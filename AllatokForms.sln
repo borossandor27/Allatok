@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29409.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AllatokForms", "AllatokForms\AllatokForms.csproj", "{1CB6BEF6-9149-4228-8CB4-55E78BEE3025}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1CB6BEF6-9149-4228-8CB4-55E78BEE3025}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1CB6BEF6-9149-4228-8CB4-55E78BEE3025}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1CB6BEF6-9149-4228-8CB4-55E78BEE3025}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1CB6BEF6-9149-4228-8CB4-55E78BEE3025}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {70A9EB8E-DD84-42DE-A638-51BCD9AF3146}
+	EndGlobalSection
+EndGlobal

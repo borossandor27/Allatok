@@ -1,0 +1,9 @@
+C:\Users\Sanyi\source\repos\AllatokForms\AllatokForms\bin\Debug\AllatokForms.exe.config
+C:\Users\Sanyi\source\repos\AllatokForms\AllatokForms\bin\Debug\AllatokForms.exe
+C:\Users\Sanyi\source\repos\AllatokForms\AllatokForms\bin\Debug\AllatokForms.pdb
+C:\Users\Sanyi\source\repos\AllatokForms\AllatokForms\obj\Debug\AllatokForms.csprojAssemblyReference.cache
+C:\Users\Sanyi\source\repos\AllatokForms\AllatokForms\obj\Debug\AllatokForms.Form1.resources
+C:\Users\Sanyi\source\repos\AllatokForms\AllatokForms\obj\Debug\AllatokForms.Properties.Resources.resources
+C:\Users\Sanyi\source\repos\AllatokForms\AllatokForms\obj\Debug\AllatokForms.csproj.GenerateResource.cache
+C:\Users\Sanyi\source\repos\AllatokForms\AllatokForms\obj\Debug\AllatokForms.exe
+C:\Users\Sanyi\source\repos\AllatokForms\AllatokForms\obj\Debug\AllatokForms.pdb
