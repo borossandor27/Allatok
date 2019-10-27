@@ -9,12 +9,13 @@ namespace AllatokForms
     class Kacsa : Allat
     {
         public string Tollazat;
-        private static int kacsaID;
+        private static int kacsaNum = 0;
+        public int kacsaID;
 
         public Kacsa(int kora, bool ivarerett, bool nem, string tollazat) : base(kora, ivarerett, nem)
         {
             Tollazat = tollazat;
-            kacsaID++;
+            kacsaID = kacsaNum++;
         }
         public string getMegnevezes()
         {
@@ -28,18 +29,26 @@ namespace AllatokForms
             }
         }
 
-        public int getKacsaID()
+        public int getKacsaNum()
         {
-            return kacsaID;
+            return kacsaNum;
         }
-        ~Kacsa()
+        ~Kacsa() 
         {
-            kacsaID--;
+            kacsaNum--;
         }
 
         public override string ToString()
         {
-            return kacsaID + " " + getMegnevezes() + " (" + AllatID + ")";
+            return kacsaID + " " + getMegnevezes() + " (" + AllatNum + ")";
+        }
+
+        public string KacsaAdatok()
+        {
+            string Kacsa_adatok = $"ID: {kacsaID}\n"
+                + $"Tollazat: {Tollazat} " + getMegnevezes() + "\n"
+                + $"Kora: {Kora}\n";
+            return Kacsa_adatok;
         }
     }
 }

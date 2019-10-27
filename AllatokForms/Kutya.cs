@@ -8,13 +8,16 @@ namespace AllatokForms
 {
     class Kutya : Allat
     {
-        private static int kutyaID = 0;
+        private static int kutyaNum = 0;
+        private int kutyaID;
         public string Fajta;
+
+        public int KutyaID { get => kutyaID;}
 
         public Kutya(int kora, bool ivarerett, bool nem, string fajta) : base(kora, ivarerett, nem)
         {
             Fajta = fajta;
-            ++kutyaID;
+            kutyaID = kutyaNum++;
         }
 
         public string getMegnevezes()
@@ -29,19 +32,28 @@ namespace AllatokForms
             }
         }
 
-        public int getKutyaID()
+        public int getKutyaNum()
         {
-            return kutyaID;
+            return kutyaNum;
         }
 
         ~Kutya()
         {
-            kutyaID--;
+            kutyaNum--;
+            Console.WriteLine("Kutya destruktor fut...");
         }
 
         public override string ToString()
         {
-            return kutyaID + " " + Fajta + " " + getMegnevezes() + " (" + AllatID + ")";
+            return kutyaID + " " + Fajta + " " + getMegnevezes() + " (" + AllatNum + ")";
+        }
+
+        public string KutyaAdatok()
+        {
+            string Kutya_adatok = $"ID: {KutyaID}\n"
+                + $"Fajta: {Fajta} " + getMegnevezes() + "\n"
+                + $"Kora: {Kora}\n";
+            return Kutya_adatok;
         }
     }
 }
