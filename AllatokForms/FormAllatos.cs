@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace AllatokForms
 {
@@ -19,6 +20,7 @@ namespace AllatokForms
         Kacsa kivalasztottKacsa;
         List<Kutya> kutyak = new List<Kutya>();
         List<Kacsa> kacsak = new List<Kacsa>();
+        string FajlFilter = "Pontosvesszővel tagolt szövegfájl (*.csv)|*.csv|Egyszerű szövegfájl (*.txt)|*.txt|All files (*.*)|*.*";
         public FormAllatos()
         {
             InitializeComponent();
@@ -28,6 +30,7 @@ namespace AllatokForms
         {
             Kiirja_Kozepre_A_Peldanyszamokat();
             comboBox_Kutya_Fajta.SelectedIndex = 353;
+            comboBox_Kacsa_tollazat.SelectedIndex = 0;
         }
 
         private void button_Kutyat_hozzaad_Click(object sender, EventArgs e)
@@ -132,6 +135,7 @@ namespace AllatokForms
             if (valasztas==DialogResult.Yes)
             {
                 kutyak.Remove(kivalasztottKutya);
+                //-- A megmaradt példányokkal újratöltjük a listát
                 listBox_Kutyak.Items.Clear();
                 foreach (var item in kutyak)
                 {
@@ -159,6 +163,159 @@ namespace AllatokForms
                 OsszesAllat--;
                 GC.SuppressFinalize(kivalasztottKutya);
                 Console.WriteLine(kivalasztottKutya.Fajta);
+            }
+        }
+
+        private void button_Kutya_Kiir_Click(object sender, EventArgs e)
+        {
+            saveFileDialog1.RestoreDirectory = true;
+            saveFileDialog1.AddExtension = true;
+            saveFileDialog1.InitialDirectory = saveFileDialog1.InitialDirectory == "" ? Convert.ToString(Environment.SpecialFolder.MyDocuments) : saveFileDialog1.InitialDirectory;
+            saveFileDialog1.Title = "Kutyák adatainak az elmentése...";
+            saveFileDialog1.Filter = FajlFilter;
+            saveFileDialog1.FileName = "kutyaAdatok.csv";
+            saveFileDialog1.CheckFileExists = false;
+            saveFileDialog1.CheckPathExists = true;
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK && saveFileDialog1.FileName.Trim().Length > 0)
+            {
+                try
+                {
+                    using (StreamWriter sw = new StreamWriter(saveFileDialog1.FileName))
+                    {
+                        foreach (Kutya item in kutyak)
+                        {
+                            sw.WriteLine(item.FajlbaIr());
+                        }
+                    }
+                }
+                catch (IOException err)
+                {
+                    MessageBox.Show(err.Message);
+                    throw;
+                }
+            }
+        }
+
+        private void button_Kutyat_Betolt_Click(object sender, EventArgs e)
+        {
+            if ( MessageBox.Show(listBox_Kutyak.Items.Count > 0 ? "Lecseréli a listának a tartalmát a fájlban lévő adatokra?":"Szeretné fájlból beolvasni az adatokat?", "Adatok betöltése", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                openFileDialog1.RestoreDirectory = true;
+                openFileDialog1.AddExtension = true;
+                openFileDialog1.InitialDirectory = openFileDialog1.InitialDirectory == "" ? Convert.ToString(Environment.SpecialFolder.MyDocuments) : openFileDialog1.InitialDirectory;
+                openFileDialog1.Title = "Kutyák adatainak a visszatöltése...";
+                openFileDialog1.Filter = FajlFilter;
+                openFileDialog1.FileName = "kutyaAdatok.csv";
+
+                if (openFileDialog1.ShowDialog() == DialogResult.OK && openFileDialog1.FileName.Trim().Length > 0)
+                {
+                    try
+                    {
+                        using (StreamReader sr = new StreamReader(openFileDialog1.FileName))
+                        {
+                            listBox_Kutyak.Items.Clear();
+                            kutyak.Clear();
+                            while (!sr.EndOfStream)
+                            {
+                                string[] sor = sr.ReadLine().Split(';');
+                                int kutyaID = int.Parse(sor[0]);
+                                string Fajta = sor[1];
+                                bool Ivarerett = bool.Parse(sor[2]);
+                                bool Nem = bool.Parse(sor[3]);
+                                int Kora = int.Parse(sor[4]);
+                                Kutya uj = new Kutya(Kora, Ivarerett, Nem, Fajta);
+                                kutyak.Add(uj);
+
+                                listBox_Kutyak.Items.Add(uj.ToString());
+                            }
+                            OsszesKutya = listBox_Kutyak.Items.Count;
+                            OsszesAllat = OsszesKutya + OsszesKacsa;
+                            Kiirja_Kozepre_A_Peldanyszamokat();
+                        }
+                    }
+                    catch (IOException err)
+                    {
+                        MessageBox.Show(err.Message);
+                        throw;
+                    }
+                }
+            }        
+        }
+
+        private void button_Kacsat_Kiir_Click(object sender, EventArgs e)
+        {
+            saveFileDialog1.RestoreDirectory = true;
+            saveFileDialog1.AddExtension = true;
+            saveFileDialog1.InitialDirectory = saveFileDialog1.InitialDirectory == "" ? Convert.ToString(Environment.SpecialFolder.MyDocuments) : saveFileDialog1.InitialDirectory;
+            saveFileDialog1.Title = "Kacsák adatainak az elmentése...";
+            saveFileDialog1.Filter = FajlFilter;
+            saveFileDialog1.FileName = "kacsaAdatok.csv";
+            saveFileDialog1.CheckFileExists = false;
+            saveFileDialog1.CheckPathExists = true;
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK && saveFileDialog1.FileName.Trim().Length > 0)
+            {
+                try
+                {
+                    using (StreamWriter sw = new StreamWriter(saveFileDialog1.FileName))
+                    {
+                        foreach (Kacsa item in kacsak)
+                        {
+                            sw.WriteLine(item.FajlbaIr());
+                        }
+                    }
+                }
+                catch (IOException err)
+                {
+                    MessageBox.Show(err.Message);
+                    throw;
+                }
+            }
+
+        }
+
+        private void button_Kacsat_Betolt_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show(listBox_Kutyak.Items.Count > 0 ? "Lecseréli a listának a tartalmát a fájlban lévő adatokra?" : "Szeretné fájlból beolvasni az adatokat?", "Adatok betöltése", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                openFileDialog1.RestoreDirectory = true;
+                openFileDialog1.AddExtension = true;
+                openFileDialog1.InitialDirectory = openFileDialog1.InitialDirectory == "" ? Convert.ToString(Environment.SpecialFolder.MyDocuments) : openFileDialog1.InitialDirectory;
+                openFileDialog1.Title = "Kacsák adatainak a visszatöltése...";
+                openFileDialog1.Filter = FajlFilter;
+                openFileDialog1.FileName = "kacsaAdatok.csv";
+
+                if (openFileDialog1.ShowDialog() == DialogResult.OK && openFileDialog1.FileName.Trim().Length > 0)
+                {
+                    try
+                    {
+                        using (StreamReader sr = new StreamReader(openFileDialog1.FileName))
+                        {
+                            listBox_Kacsak.Items.Clear();
+                            kacsak.Clear();
+                            while (!sr.EndOfStream)
+                            {
+                                string[] sor = sr.ReadLine().Split(';');
+                                int kacsaID = int.Parse(sor[0]);
+                                string tollazat = sor[1];
+                                bool Ivarerett = bool.Parse(sor[2]);
+                                bool Nem = bool.Parse(sor[3]);
+                                int Kora = int.Parse(sor[4]);
+                                Kacsa uj = new Kacsa(Kora, Ivarerett, Nem, tollazat);
+                                kacsak.Add(uj);
+
+                                listBox_Kacsak.Items.Add(uj.ToString());
+                            }
+                            OsszesKacsa = listBox_Kacsak.Items.Count;
+                            OsszesAllat = OsszesKutya + OsszesKacsa;
+                            Kiirja_Kozepre_A_Peldanyszamokat();
+                        }
+                    }
+                    catch (IOException err)
+                    {
+                        MessageBox.Show(err.Message);
+                        throw;
+                    }
+                }
             }
         }
     }

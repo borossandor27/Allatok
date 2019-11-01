@@ -55,5 +55,11 @@ namespace AllatokForms
                 + $"Kora: {Kora}\n";
             return Kutya_adatok;
         }
+
+        public string FajlbaIr()
+        {
+            return string.Join(";", this.kutyaID, this.Fajta, this.Ivarerett, this.Nem, this.Kora);
+        }
+
     }
 }

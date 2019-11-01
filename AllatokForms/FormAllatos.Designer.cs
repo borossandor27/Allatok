@@ -61,6 +61,8 @@
             this.label_KacsakSzama = new System.Windows.Forms.Label();
             this.label_Kutyafalka = new System.Windows.Forms.Label();
             this.label_Osszes_allat = new System.Windows.Forms.Label();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.panel_Kutya.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numeric_Kutya_Eletkor)).BeginInit();
@@ -98,6 +100,7 @@
             this.button_Kutyat_Betolt.TabIndex = 9;
             this.button_Kutyat_Betolt.Text = "Betölt";
             this.button_Kutyat_Betolt.UseVisualStyleBackColor = true;
+            this.button_Kutyat_Betolt.Click += new System.EventHandler(this.button_Kutyat_Betolt_Click);
             // 
             // button_Kutya_Kiir
             // 
@@ -109,6 +112,7 @@
             this.button_Kutya_Kiir.Text = "Fájlba ír";
             this.button_Kutya_Kiir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button_Kutya_Kiir.UseVisualStyleBackColor = true;
+            this.button_Kutya_Kiir.Click += new System.EventHandler(this.button_Kutya_Kiir_Click);
             // 
             // comboBox_Kutya_Fajta
             // 
@@ -644,6 +648,7 @@
             this.button_Kacsat_Betolt.TabIndex = 9;
             this.button_Kacsat_Betolt.Text = "Betölt";
             this.button_Kacsat_Betolt.UseVisualStyleBackColor = true;
+            this.button_Kacsat_Betolt.Click += new System.EventHandler(this.button_Kacsat_Betolt_Click);
             // 
             // button_Kacsat_Kiir
             // 
@@ -656,6 +661,7 @@
             this.button_Kacsat_Kiir.Text = "Fájlba ír";
             this.button_Kacsat_Kiir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button_Kacsat_Kiir.UseVisualStyleBackColor = true;
+            this.button_Kacsat_Kiir.Click += new System.EventHandler(this.button_Kacsat_Kiir_Click);
             // 
             // comboBox_Kacsa_tollazat
             // 
@@ -811,6 +817,10 @@
             this.label_Osszes_allat.TabIndex = 0;
             this.label_Osszes_allat.Text = "label5";
             // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
             // FormAllatos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -873,6 +883,8 @@
         private System.Windows.Forms.Button button_Kacsa_Eltavolit;
         private System.Windows.Forms.Button button_Kacsat_Betolt;
         private System.Windows.Forms.Button button_Kacsat_Kiir;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
     }
 }
 

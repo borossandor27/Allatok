@@ -50,5 +50,10 @@ namespace AllatokForms
                 + $"Kora: {Kora}\n";
             return Kacsa_adatok;
         }
+
+        public string FajlbaIr()
+        {
+            return string.Join(";", this.kacsaID, this.Tollazat, this.Ivarerett, this.Nem, this.Kora);
+        }
     }
 }
