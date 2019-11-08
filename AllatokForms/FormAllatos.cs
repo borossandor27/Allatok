@@ -29,10 +29,15 @@ namespace AllatokForms
         private void Form1_Load(object sender, EventArgs e)
         {
             Kiirja_Kozepre_A_Peldanyszamokat();
-            comboBox_Kutya_Fajta.SelectedIndex = 353;
-            comboBox_Kacsa_tollazat.SelectedIndex = 0;
+            comboBox_Kutya_Fajta.SelectedIndex = 353; //-- alapértelmezett elemet állít be
+            comboBox_Kacsa_tollazat.SelectedIndex = 0;  //-- alapértelmezett elemet állít be
         }
 
+        /// <summary>
+        /// A beviteli mezők adatai alapján új egyedet hoz létre
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button_Kutyat_hozzaad_Click(object sender, EventArgs e)
         {
             int kora = (int)numeric_Kutya_Eletkor.Value;
@@ -59,6 +64,8 @@ namespace AllatokForms
             kutyak.Add(uj);
             Kiirja_Kozepre_A_Peldanyszamokat();
         }
+
+
         private void Kiirja_Kozepre_A_Peldanyszamokat()
         {
             label_Osszes_allat.Text = "Összesen " + OsszesAllat + " állatpéldány";
@@ -73,6 +80,12 @@ namespace AllatokForms
             int w = cimke.Parent.Width;
             cimke.Left = (w - cimke.Width) / 2;
         }
+
+        /// <summary>
+        /// A beviteli mezők adatai alapján új egyedet hoz létre
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button_Kacsat_hozzaad_Click(object sender, EventArgs e)
         {
             int kora = (int)numeric_Kacsa_Kora.Value;
@@ -90,6 +103,11 @@ namespace AllatokForms
             kacsak.Add(uj);
         }
 
+        /// <summary>
+        /// A listában kiválasztott elem adataival aktualizálja a többi objektumot. Az így kijelölt egyed a listából eltávolíthatóvá válik.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void listBox_Kutyak_SelectedIndexChanged(object sender, EventArgs e)
         {
             string[] sor = listBox_Kutyak.SelectedItem.ToString().Split();
@@ -110,8 +128,14 @@ namespace AllatokForms
             comboBox_Kutya_Fajta.SelectedItem = kivalasztottKutya.Fajta;
         }
 
+        /// <summary>
+        /// A listában kiválasztott elem adataival aktualizálja a többi objektumot. Az így kijelölt egyed a listából eltávolíthatóvá válik.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void listBox_Kacsak_SelectedIndexChanged(object sender, EventArgs e)
         {
+            
             string[] sor = listBox_Kacsak.SelectedItem.ToString().Split();
             int kacsaID = int.Parse(sor[0]);
             kivalasztottKacsa = kacsak.Find(x => x.kacsaID == kacsaID);
@@ -148,6 +172,11 @@ namespace AllatokForms
             }
         }
 
+        /// <summary>
+        /// A Kacsák listában kiválasztott elemet eltávolítja
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button_Kacsa_Eltavolit_Click(object sender, EventArgs e)
         {
             DialogResult valasztas = MessageBox.Show(kivalasztottKacsa.KacsaAdatok() + "\n\nvalóban törli ezt a példányt?", "Pédány törlése", MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk);
@@ -166,6 +195,11 @@ namespace AllatokForms
             }
         }
 
+        /// <summary>
+        /// A kutyákat adatait szövegfájlba írja
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button_Kutya_Kiir_Click(object sender, EventArgs e)
         {
             saveFileDialog1.RestoreDirectory = true;
