@@ -86,6 +86,7 @@
   <ItemGroup>
     <Content Include="Custom-Icon-Design-Flatastic-1-Add.ico" />
     <Content Include="Kyo-Tux-Delikate-Close.ico" />
+    <None Include="Resources\Hopstarter-Soft-Scraps-Folder-Open.ico" />
     <None Include="Resources\Actions-document-save-icon.png" />
     <None Include="Resources\Documents-icon.png" />
     <None Include="Resources\Close-icon.png" />

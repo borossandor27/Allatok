@@ -30,11 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAllatos));
             this.panel_Kutya = new System.Windows.Forms.Panel();
-            this.button_Kutyat_Betolt = new System.Windows.Forms.Button();
-            this.button_Kutya_Kiir = new System.Windows.Forms.Button();
             this.comboBox_Kutya_Fajta = new System.Windows.Forms.ComboBox();
-            this.button_Kutya_Eltavolit = new System.Windows.Forms.Button();
-            this.button_Kutyat_hozzaad = new System.Windows.Forms.Button();
             this.listBox_Kutyak = new System.Windows.Forms.ListBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.radioButton_Kutya_Nosteny = new System.Windows.Forms.RadioButton();
@@ -44,11 +40,8 @@
             this.numeric_Kutya_Eletkor = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
             this.panel_Kacsa = new System.Windows.Forms.Panel();
-            this.button_Kacsa_Eltavolit = new System.Windows.Forms.Button();
             this.button_Kacsat_Betolt = new System.Windows.Forms.Button();
-            this.button_Kacsat_Kiir = new System.Windows.Forms.Button();
             this.comboBox_Kacsa_tollazat = new System.Windows.Forms.ComboBox();
-            this.button_Kacsat_hozzaad = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.listBox_Kacsak = new System.Windows.Forms.ListBox();
             this.numeric_Kacsa_Kora = new System.Windows.Forms.NumericUpDown();
@@ -63,6 +56,13 @@
             this.label_Osszes_allat = new System.Windows.Forms.Label();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.button_Kacsa_Eltavolit = new System.Windows.Forms.Button();
+            this.button_Kacsat_Kiir = new System.Windows.Forms.Button();
+            this.button_Kacsat_hozzaad = new System.Windows.Forms.Button();
+            this.button_Kutyat_Betolt = new System.Windows.Forms.Button();
+            this.button_Kutya_Kiir = new System.Windows.Forms.Button();
+            this.button_Kutya_Eltavolit = new System.Windows.Forms.Button();
+            this.button_Kutyat_hozzaad = new System.Windows.Forms.Button();
             this.panel_Kutya.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numeric_Kutya_Eletkor)).BeginInit();
@@ -91,28 +91,6 @@
             this.panel_Kutya.Name = "panel_Kutya";
             this.panel_Kutya.Size = new System.Drawing.Size(252, 510);
             this.panel_Kutya.TabIndex = 0;
-            // 
-            // button_Kutyat_Betolt
-            // 
-            this.button_Kutyat_Betolt.Location = new System.Drawing.Point(128, 436);
-            this.button_Kutyat_Betolt.Name = "button_Kutyat_Betolt";
-            this.button_Kutyat_Betolt.Size = new System.Drawing.Size(100, 35);
-            this.button_Kutyat_Betolt.TabIndex = 9;
-            this.button_Kutyat_Betolt.Text = "Betölt";
-            this.button_Kutyat_Betolt.UseVisualStyleBackColor = true;
-            this.button_Kutyat_Betolt.Click += new System.EventHandler(this.button_Kutyat_Betolt_Click);
-            // 
-            // button_Kutya_Kiir
-            // 
-            this.button_Kutya_Kiir.Image = global::AllatokForms.Properties.Resources.Actions_document_save_icon;
-            this.button_Kutya_Kiir.Location = new System.Drawing.Point(14, 436);
-            this.button_Kutya_Kiir.Name = "button_Kutya_Kiir";
-            this.button_Kutya_Kiir.Size = new System.Drawing.Size(100, 35);
-            this.button_Kutya_Kiir.TabIndex = 10;
-            this.button_Kutya_Kiir.Text = "Fájlba ír";
-            this.button_Kutya_Kiir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button_Kutya_Kiir.UseVisualStyleBackColor = true;
-            this.button_Kutya_Kiir.Click += new System.EventHandler(this.button_Kutya_Kiir_Click);
             // 
             // comboBox_Kutya_Fajta
             // 
@@ -500,33 +478,6 @@
             this.comboBox_Kutya_Fajta.Size = new System.Drawing.Size(189, 21);
             this.comboBox_Kutya_Fajta.TabIndex = 8;
             // 
-            // button_Kutya_Eltavolit
-            // 
-            this.button_Kutya_Eltavolit.Image = ((System.Drawing.Image)(resources.GetObject("button_Kutya_Eltavolit.Image")));
-            this.button_Kutya_Eltavolit.Location = new System.Drawing.Point(128, 376);
-            this.button_Kutya_Eltavolit.Name = "button_Kutya_Eltavolit";
-            this.button_Kutya_Eltavolit.Size = new System.Drawing.Size(100, 35);
-            this.button_Kutya_Eltavolit.TabIndex = 7;
-            this.button_Kutya_Eltavolit.Text = "Eltávolít";
-            this.button_Kutya_Eltavolit.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button_Kutya_Eltavolit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button_Kutya_Eltavolit.UseVisualStyleBackColor = true;
-            this.button_Kutya_Eltavolit.Click += new System.EventHandler(this.button_Kutya_Eltavolit_Click);
-            // 
-            // button_Kutyat_hozzaad
-            // 
-            this.button_Kutyat_hozzaad.Image = ((System.Drawing.Image)(resources.GetObject("button_Kutyat_hozzaad.Image")));
-            this.button_Kutyat_hozzaad.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button_Kutyat_hozzaad.Location = new System.Drawing.Point(14, 376);
-            this.button_Kutyat_hozzaad.Name = "button_Kutyat_hozzaad";
-            this.button_Kutyat_hozzaad.Size = new System.Drawing.Size(100, 35);
-            this.button_Kutyat_hozzaad.TabIndex = 7;
-            this.button_Kutyat_hozzaad.Text = "Hozzáad";
-            this.button_Kutyat_hozzaad.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button_Kutyat_hozzaad.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button_Kutyat_hozzaad.UseVisualStyleBackColor = true;
-            this.button_Kutyat_hozzaad.Click += new System.EventHandler(this.button_Kutyat_hozzaad_Click);
-            // 
             // listBox_Kutyak
             // 
             this.listBox_Kutyak.FormattingEnabled = true;
@@ -626,42 +577,18 @@
             this.panel_Kacsa.Size = new System.Drawing.Size(246, 510);
             this.panel_Kacsa.TabIndex = 1;
             // 
-            // button_Kacsa_Eltavolit
-            // 
-            this.button_Kacsa_Eltavolit.Image = global::AllatokForms.Properties.Resources.Close_icon;
-            this.button_Kacsa_Eltavolit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button_Kacsa_Eltavolit.Location = new System.Drawing.Point(133, 376);
-            this.button_Kacsa_Eltavolit.Name = "button_Kacsa_Eltavolit";
-            this.button_Kacsa_Eltavolit.Size = new System.Drawing.Size(100, 35);
-            this.button_Kacsa_Eltavolit.TabIndex = 11;
-            this.button_Kacsa_Eltavolit.Text = "Eltávolít";
-            this.button_Kacsa_Eltavolit.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button_Kacsa_Eltavolit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button_Kacsa_Eltavolit.UseVisualStyleBackColor = true;
-            this.button_Kacsa_Eltavolit.Click += new System.EventHandler(this.button_Kacsa_Eltavolit_Click);
-            // 
             // button_Kacsat_Betolt
             // 
+            this.button_Kacsat_Betolt.Image = global::AllatokForms.Properties.Resources.Hopstarter_Soft_Scraps_Folder_Open;
+            this.button_Kacsat_Betolt.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button_Kacsat_Betolt.Location = new System.Drawing.Point(133, 436);
             this.button_Kacsat_Betolt.Name = "button_Kacsat_Betolt";
-            this.button_Kacsat_Betolt.Size = new System.Drawing.Size(100, 35);
+            this.button_Kacsat_Betolt.Size = new System.Drawing.Size(100, 46);
             this.button_Kacsat_Betolt.TabIndex = 9;
             this.button_Kacsat_Betolt.Text = "Betölt";
+            this.button_Kacsat_Betolt.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button_Kacsat_Betolt.UseVisualStyleBackColor = true;
             this.button_Kacsat_Betolt.Click += new System.EventHandler(this.button_Kacsat_Betolt_Click);
-            // 
-            // button_Kacsat_Kiir
-            // 
-            this.button_Kacsat_Kiir.Image = global::AllatokForms.Properties.Resources.Actions_document_save_icon;
-            this.button_Kacsat_Kiir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button_Kacsat_Kiir.Location = new System.Drawing.Point(18, 436);
-            this.button_Kacsat_Kiir.Name = "button_Kacsat_Kiir";
-            this.button_Kacsat_Kiir.Size = new System.Drawing.Size(100, 35);
-            this.button_Kacsat_Kiir.TabIndex = 10;
-            this.button_Kacsat_Kiir.Text = "Fájlba ír";
-            this.button_Kacsat_Kiir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button_Kacsat_Kiir.UseVisualStyleBackColor = true;
-            this.button_Kacsat_Kiir.Click += new System.EventHandler(this.button_Kacsat_Kiir_Click);
             // 
             // comboBox_Kacsa_tollazat
             // 
@@ -676,20 +603,6 @@
             this.comboBox_Kacsa_tollazat.Name = "comboBox_Kacsa_tollazat";
             this.comboBox_Kacsa_tollazat.Size = new System.Drawing.Size(190, 21);
             this.comboBox_Kacsa_tollazat.TabIndex = 8;
-            // 
-            // button_Kacsat_hozzaad
-            // 
-            this.button_Kacsat_hozzaad.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button_Kacsat_hozzaad.Image = global::AllatokForms.Properties.Resources.add_icon;
-            this.button_Kacsat_hozzaad.Location = new System.Drawing.Point(18, 376);
-            this.button_Kacsat_hozzaad.Name = "button_Kacsat_hozzaad";
-            this.button_Kacsat_hozzaad.Size = new System.Drawing.Size(100, 35);
-            this.button_Kacsat_hozzaad.TabIndex = 7;
-            this.button_Kacsat_hozzaad.Text = "Hozzáad";
-            this.button_Kacsat_hozzaad.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button_Kacsat_hozzaad.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button_Kacsat_hozzaad.UseVisualStyleBackColor = true;
-            this.button_Kacsat_hozzaad.Click += new System.EventHandler(this.button_Kacsat_hozzaad_Click);
             // 
             // label2
             // 
@@ -820,6 +733,98 @@
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // button_Kacsa_Eltavolit
+            // 
+            this.button_Kacsa_Eltavolit.Image = global::AllatokForms.Properties.Resources.Close_icon;
+            this.button_Kacsa_Eltavolit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button_Kacsa_Eltavolit.Location = new System.Drawing.Point(133, 376);
+            this.button_Kacsa_Eltavolit.Name = "button_Kacsa_Eltavolit";
+            this.button_Kacsa_Eltavolit.Size = new System.Drawing.Size(100, 35);
+            this.button_Kacsa_Eltavolit.TabIndex = 11;
+            this.button_Kacsa_Eltavolit.Text = "Eltávolít";
+            this.button_Kacsa_Eltavolit.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button_Kacsa_Eltavolit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button_Kacsa_Eltavolit.UseVisualStyleBackColor = true;
+            this.button_Kacsa_Eltavolit.Click += new System.EventHandler(this.button_Kacsa_Eltavolit_Click);
+            // 
+            // button_Kacsat_Kiir
+            // 
+            this.button_Kacsat_Kiir.Image = global::AllatokForms.Properties.Resources.Actions_document_save_icon;
+            this.button_Kacsat_Kiir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button_Kacsat_Kiir.Location = new System.Drawing.Point(18, 436);
+            this.button_Kacsat_Kiir.Name = "button_Kacsat_Kiir";
+            this.button_Kacsat_Kiir.Size = new System.Drawing.Size(100, 46);
+            this.button_Kacsat_Kiir.TabIndex = 10;
+            this.button_Kacsat_Kiir.Text = "Fájlba ír";
+            this.button_Kacsat_Kiir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button_Kacsat_Kiir.UseVisualStyleBackColor = true;
+            this.button_Kacsat_Kiir.Click += new System.EventHandler(this.button_Kacsat_Kiir_Click);
+            // 
+            // button_Kacsat_hozzaad
+            // 
+            this.button_Kacsat_hozzaad.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button_Kacsat_hozzaad.Image = global::AllatokForms.Properties.Resources.add_icon;
+            this.button_Kacsat_hozzaad.Location = new System.Drawing.Point(18, 376);
+            this.button_Kacsat_hozzaad.Name = "button_Kacsat_hozzaad";
+            this.button_Kacsat_hozzaad.Size = new System.Drawing.Size(100, 35);
+            this.button_Kacsat_hozzaad.TabIndex = 7;
+            this.button_Kacsat_hozzaad.Text = "Hozzáad";
+            this.button_Kacsat_hozzaad.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button_Kacsat_hozzaad.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button_Kacsat_hozzaad.UseVisualStyleBackColor = true;
+            this.button_Kacsat_hozzaad.Click += new System.EventHandler(this.button_Kacsat_hozzaad_Click);
+            // 
+            // button_Kutyat_Betolt
+            // 
+            this.button_Kutyat_Betolt.Image = global::AllatokForms.Properties.Resources.Hopstarter_Soft_Scraps_Folder_Open;
+            this.button_Kutyat_Betolt.Location = new System.Drawing.Point(128, 436);
+            this.button_Kutyat_Betolt.Name = "button_Kutyat_Betolt";
+            this.button_Kutyat_Betolt.Size = new System.Drawing.Size(100, 46);
+            this.button_Kutyat_Betolt.TabIndex = 9;
+            this.button_Kutyat_Betolt.Text = "Betölt";
+            this.button_Kutyat_Betolt.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button_Kutyat_Betolt.UseVisualStyleBackColor = true;
+            this.button_Kutyat_Betolt.Click += new System.EventHandler(this.button_Kutyat_Betolt_Click);
+            // 
+            // button_Kutya_Kiir
+            // 
+            this.button_Kutya_Kiir.Image = global::AllatokForms.Properties.Resources.Actions_document_save_icon;
+            this.button_Kutya_Kiir.Location = new System.Drawing.Point(14, 436);
+            this.button_Kutya_Kiir.Name = "button_Kutya_Kiir";
+            this.button_Kutya_Kiir.Size = new System.Drawing.Size(100, 46);
+            this.button_Kutya_Kiir.TabIndex = 10;
+            this.button_Kutya_Kiir.Text = "Fájlba ír";
+            this.button_Kutya_Kiir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button_Kutya_Kiir.UseVisualStyleBackColor = true;
+            this.button_Kutya_Kiir.Click += new System.EventHandler(this.button_Kutya_Kiir_Click);
+            // 
+            // button_Kutya_Eltavolit
+            // 
+            this.button_Kutya_Eltavolit.Image = ((System.Drawing.Image)(resources.GetObject("button_Kutya_Eltavolit.Image")));
+            this.button_Kutya_Eltavolit.Location = new System.Drawing.Point(128, 376);
+            this.button_Kutya_Eltavolit.Name = "button_Kutya_Eltavolit";
+            this.button_Kutya_Eltavolit.Size = new System.Drawing.Size(100, 35);
+            this.button_Kutya_Eltavolit.TabIndex = 7;
+            this.button_Kutya_Eltavolit.Text = "Eltávolít";
+            this.button_Kutya_Eltavolit.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button_Kutya_Eltavolit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button_Kutya_Eltavolit.UseVisualStyleBackColor = true;
+            this.button_Kutya_Eltavolit.Click += new System.EventHandler(this.button_Kutya_Eltavolit_Click);
+            // 
+            // button_Kutyat_hozzaad
+            // 
+            this.button_Kutyat_hozzaad.Image = ((System.Drawing.Image)(resources.GetObject("button_Kutyat_hozzaad.Image")));
+            this.button_Kutyat_hozzaad.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button_Kutyat_hozzaad.Location = new System.Drawing.Point(14, 376);
+            this.button_Kutyat_hozzaad.Name = "button_Kutyat_hozzaad";
+            this.button_Kutyat_hozzaad.Size = new System.Drawing.Size(100, 35);
+            this.button_Kutyat_hozzaad.TabIndex = 7;
+            this.button_Kutyat_hozzaad.Text = "Hozzáad";
+            this.button_Kutyat_hozzaad.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button_Kutyat_hozzaad.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button_Kutyat_hozzaad.UseVisualStyleBackColor = true;
+            this.button_Kutyat_hozzaad.Click += new System.EventHandler(this.button_Kutyat_hozzaad_Click);
             // 
             // FormAllatos
             // 

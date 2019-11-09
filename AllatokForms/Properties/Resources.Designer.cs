@@ -99,5 +99,15 @@ namespace AllatokForms.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Hopstarter_Soft_Scraps_Folder_Open {
+            get {
+                object obj = ResourceManager.GetObject("Hopstarter-Soft-Scraps-Folder-Open", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
